@@ -35,7 +35,8 @@ public class GreenKartSteps {
 	driver = new ChromeDriver();
 	driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 	driver.manage().window().maximize();
-	Thread.sleep(2000);
+	//Thread.sleep(2000);
+	
 	page = new GreenKartPages(driver);
 	
 	}
@@ -74,7 +75,7 @@ public class GreenKartSteps {
 	public void user_adds_second_most_expensive_item_to_cart() {
 		
 		//WebElement button1 = driver.findElement(By.xpath("//*[@class='products']/div[" + pos2 +"]/div[3]/button"));
-		//Couldnt insert variable pos2 into page factory xpath like above. Ended up doing weird line below
+		//Couldnt insert variable pos2 into page factory xpath like above. Ended up doing line below
 		//where I convert the getter method result to string then inserting pos2
 		String newXPath = page.getAddToCartButton().toString().substring(52,96).replaceAll("XX", Integer.toString(pos2));
 		driver.findElement(By.xpath(newXPath)).click();
